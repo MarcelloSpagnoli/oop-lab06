@@ -1,6 +1,5 @@
 package it.unibo.collections;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -117,7 +116,7 @@ public final class UseListsAndMaps {
         time = System.nanoTime() - time;
         millis = TimeUnit.NANOSECONDS.toMillis(time);
         System.out.println(// NOPMD
-            "Adding "
+            "Reading "
                 + READ
                 + " ints to String and inserting them in a array list took "
                 + time
@@ -133,7 +132,7 @@ public final class UseListsAndMaps {
         time = System.nanoTime() - time;
         millis = TimeUnit.NANOSECONDS.toMillis(time);
         System.out.println(// NOPMD
-            "Adding "
+            "Reading "
                 + READ
                 + " ints to String and inserting them in a linked list took "
                 + time
@@ -169,11 +168,11 @@ public final class UseListsAndMaps {
         /*
          * 8) Compute the population of the world
          */
+  
         long population = 0;
-        final ArrayList<Long> people = (ArrayList<Long>) map.values();
-        for (Long long1 : people) {
-            population = population + long1;
+        for (Long people : map.values()) {
+            population = population + people;
         }
-        System.out.println();
+        System.out.println("Population of the world: " + population);
     }
 }
